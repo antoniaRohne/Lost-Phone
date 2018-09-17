@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MainScreen.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Contacts.unity
+    guid: 21c2cb0a481b7014286dd1d0fad6c230
+  - enabled: 1
+    path: Assets/Scenes/BVG.unity
+    guid: a429c91d69bff5743a97289c6535c730
+  - enabled: 1
+    path: Assets/Scenes/Calendar.unity
+    guid: 6d5489b45a9f23a45b53002e3cb0dc22
+  - enabled: 1
+    path: Assets/Scenes/Calls.unity
+    guid: 0e9e57e6ba6272e4b94985e7d7ee8ea8
+  - enabled: 1
+    path: Assets/Scenes/Clock.unity
+    guid: a6957decf0f217544999565d5352da38
+  - enabled: 1
+    path: Assets/Scenes/Gallery.unity
+    guid: 8214556aa8ac7004c9b08a94691d48c2
+  - enabled: 1
+    path: Assets/Scenes/Instagram.unity
+    guid: 900af26d0d23daf4a8f4a5f7ff2c2bbd
+  - enabled: 1
+    path: Assets/Scenes/Internet.unity
+    guid: b10d017cb0fd07749aeca9871dbcaad7
+  - enabled: 1
+    path: Assets/Scenes/Mail.unity
+    guid: 3b6ab8b0452cce84fb2aaeafb7dd6bb4
+  - enabled: 1
+    path: Assets/Scenes/Messages.unity
+    guid: 462af7108e0cec348875dddbcfeb4a74
+  - enabled: 1
+    path: Assets/Scenes/Settings.unity
+    guid: 5021123a540cabf45891cc981d9ab5ff
+  - enabled: 1
+    path: Assets/Scenes/Memo.unity
+    guid: 689da6ed5e9736342a548ac246d87845
+  m_configObjects: {}
