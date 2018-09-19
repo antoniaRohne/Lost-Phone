@@ -1,12 +1,16 @@
-﻿using UnityEngine;
+﻿using UniRx;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MemoInAppController : MonoBehaviour, InAppController {
 
+	//maybe get rid of mono through scriptable objects from Importer/AppController
+	
 	private MemoCSVReader _csvReader;
 
 	[SerializeField] private GameObject _memo;
+	[SerializeField] private Text _newMemoText;
 	
 	public void Start()
 	{
@@ -30,9 +34,9 @@ public class MemoInAppController : MonoBehaviour, InAppController {
 		}
 	}
 
-	public void CreateNewMemo(string text)
+	public void CreateNewMemo(string text) 
 	{
-		GameObject Memo = Instantiate(_memo, GameObject.Find("Content").transform);
+		GameObject Memo = Instantiate(_memo, GameObject.Find("Content").transform); //monobehaviour -> get rid of find
 		Memo.GetComponentInChildren<Text>().text = text;
 	}
 }

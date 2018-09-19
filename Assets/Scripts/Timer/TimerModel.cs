@@ -5,14 +5,9 @@ using UnityEngine;
 
 public class TimerModel
 {
-	//[SerializeField] private int _hours;
-	//[SerializeField] private int _minutes;
-
-	//public ReactiveProperty<int> HoursProperty { get; private set; }
-	//public ReactiveProperty<int> MinutesProperty { get; private set; }
 	public ReactiveProperty<DateTime> Time { get; private set; }
 	
-	private readonly WaitForSeconds _oneSecond = new WaitForSeconds(15);
+	private readonly WaitForSeconds _oneMinute = new WaitForSeconds(15);
 
 	//1min = 15 sekunden
 	//1h = 60*15 = 900 sekunden (= 15 min)
@@ -28,7 +23,7 @@ public class TimerModel
 	{
 		while (true)
 		{
-			yield return _oneSecond;
+			yield return _oneMinute;
 			Time.Value = Time.Value.AddMinutes(1);
 		}
 	

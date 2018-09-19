@@ -1,14 +1,10 @@
 ﻿using System;
+using App;
 using UnityEngine;
 
 public class CalenderEvent : EventModel
 {   
-    public CalenderEvent(DateTime eventTime, TimerModel timerModel) : base(eventTime, timerModel)
+    public CalenderEvent(DateTime eventTime, TimerModel timerModel, GameObject pushnote, AppConfigurations app) : base(eventTime, timerModel, pushnote, app)
     {
-    }
-    
-    protected override void StartEvent()
-    {
-        Debug.LogFormat("Calender Event triggered at {0}", StartTime.Value);
     }
 }

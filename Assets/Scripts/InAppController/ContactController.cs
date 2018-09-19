@@ -27,12 +27,12 @@ public class ContactController :  MonoBehaviour, InAppController
 	{
 		var contacts = _csvReader.GetModelList();
 		int x = 0;
-		foreach (ContactModel contact in contacts)
+		/*foreach (ContactModel contact in contacts)
 		{
-			GameObject contactGameObject = Instantiate(_contact, GameObject.Find("Content").transform);
+			GameObject contactGameObject = Instantiate(_contact, GameObject.Find("Content").transform); //same 
 			var view = contactGameObject.GetComponent<ContactView>();
 			view.Surname = contact.Surname;
 			view.Name = contact.Name;
-		}
+		}*/
 	}
 }

@@ -1,15 +1,10 @@
 ﻿using System;
+using App;
 using UnityEngine;
 
 public class MessageEvent : EventModel
 {    
-    public MessageEvent(DateTime eventTime, TimerModel timerModel) : base(eventTime, timerModel)
+    public MessageEvent(DateTime eventTime, TimerModel timerModel, GameObject pushnote, AppConfigurations app) : base(eventTime, timerModel, pushnote, app)
     {
     }
-    
-    protected override void StartEvent()
-    {
-        Debug.LogFormat("Message Event triggered at {0}", StartTime.Value);
-    }
-
 }

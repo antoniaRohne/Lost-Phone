@@ -14,4 +14,8 @@ public class TimerView: MonoBehaviour
 		AppController.Instance.Timer.Time.Subscribe(x => _timeText.text = x.ToShortTimeString());
 	}
 
+	private void OnDestroy()
+	{
+		//Unsubscribe but only this object
+	}
 }

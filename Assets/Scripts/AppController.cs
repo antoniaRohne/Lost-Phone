@@ -2,21 +2,34 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Timers;
+using App;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Experimental.Audio.Google;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class AppController : MonoBehaviour {
 
+	//Prefabs
 	[SerializeField]
 	private GameObject _appIconPrefab;
+	
+	[SerializeField]
+	private GameObject _pushNotificationPrefab;
 
 	[SerializeField]
 	private GameObject _appsGrid;
 
 	[SerializeField]
 	private GameObject _mainScreenObjects;
+	//
+	
+	[SerializeField]
+	private ListObject<AppConfigurations> _appListObject;
+	
+	[SerializeField]
+	private ListObject<GameObject> _prefabListObject;
 
 	[SerializeField] private DateTime _starttime;
 
@@ -38,9 +51,11 @@ public class AppController : MonoBehaviour {
             Destroy(gameObject);
 
         DontDestroyOnLoad(gameObject);
+	    
+	    //Setup
 	    _starttime = new DateTime(2018, 09, 22, 12, 24, 0);
 	    Timer = new TimerModel(_starttime);
-		 _importer = new Importer();
+		 _importer = new Importer(_appListObject.GetList());
     }
 
 	void Start()
@@ -54,7 +69,7 @@ public class AppController : MonoBehaviour {
 		}
 
 		//Events
-		_eventFactory.CreateEvent("Calendar", Timer.Time.Value.AddMinutes(2), Timer);
+		_eventFactory.CreateEvent("Calendar", Timer.Time.Value.AddMinutes(2), Timer, _pushNotificationPrefab, _importer.GetAppConfigs(AppEnum.Calendar));
 		
 	}
 
@@ -66,7 +81,7 @@ public class AppController : MonoBehaviour {
 		};				
 
 		if (scene.name == "Messages")
-		_eventFactory.CreateEvent(scene.name, Timer.Time.Value.AddMinutes(1), Timer);
+		_eventFactory.CreateEvent(scene.name, Timer.Time.Value.AddMinutes(1), Timer, _pushNotificationPrefab,_importer.GetAppConfigs(AppEnum.Messages));
 		
 		_mainScreenObjects.SetActive(false);
 	}

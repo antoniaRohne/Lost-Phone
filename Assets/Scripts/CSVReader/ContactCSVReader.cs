@@ -13,6 +13,8 @@ public class ContactCSVReader
 		
 		string[] contactList = _contacts.text.Split(new char[] {'\n'});
 
+		//google c# utility csvreader -> in eine klasse ?
+		
 		for (var i = 1; i < contactList.Length; i++)
 		{
 			string[] contact = contactList[i].Split(new char[] {','});
@@ -21,7 +23,7 @@ public class ContactCSVReader
 			contactModel.Surname = contact[1];
 			contactModel.Name = contact[2];
 			
-			ContactList.Add(contactModel);
+			//ContactList.Add(contactModel);
 		}
 	}
 

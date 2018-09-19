@@ -452,7 +452,7 @@ Prefab:
     - target: {fileID: 224880782958924422, guid: 7eb4131e040865945b500a593d9511c3,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -19.33
+      value: -15.43
       objectReference: {fileID: 0}
     - target: {fileID: 224880782958924422, guid: 7eb4131e040865945b500a593d9511c3,
         type: 2}
@@ -462,7 +462,7 @@ Prefab:
     - target: {fileID: 224880782958924422, guid: 7eb4131e040865945b500a593d9511c3,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: -38.66
+      value: -30.85
       objectReference: {fileID: 0}
     - target: {fileID: 224880782958924422, guid: 7eb4131e040865945b500a593d9511c3,
         type: 2}
@@ -501,7 +501,7 @@ Prefab:
     - target: {fileID: 224585779223588772, guid: 7eb4131e040865945b500a593d9511c3,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0.000021584945
+      value: 0.0000010157132
       objectReference: {fileID: 0}
     - target: {fileID: 224681134330650080, guid: 7eb4131e040865945b500a593d9511c3,
         type: 2}
@@ -532,6 +532,11 @@ Prefab:
         type: 2}
       propertyPath: m_ChildControlHeight
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224585779223588772, guid: 7eb4131e040865945b500a593d9511c3,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.000030517578
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7eb4131e040865945b500a593d9511c3, type: 2}
@@ -677,7 +682,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Hallo
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.InputField+SubmitEvent, UnityEngine.UI, Version=1.0.0.0,

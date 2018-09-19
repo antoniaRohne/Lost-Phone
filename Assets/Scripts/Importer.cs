@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using App;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -10,17 +11,21 @@ public class Importer
 {
 	private Dictionary<AppEnum, SceneAsset> _sceneDictionary;
 	private Dictionary<AppEnum, Sprite> _iconDictionary;
+	private Dictionary<AppEnum, AppConfigurations> _configurationDictionary;
 
-	public Importer()
+	private AppConfigurations[] apps;
+
+	public Importer(AppConfigurations[] appList)
 	{
+		apps = appList;
 		Setup();
 	}
 
 	private void Setup()
 	{
-		var apps = Resources.LoadAll<AppConfigurations>("Apps");
 		_sceneDictionary = apps.ToDictionary(x => x.App, y => y.Scene);
 		_iconDictionary = apps.ToDictionary(x => x.App, y => y.Icon);
+		_configurationDictionary = apps.ToDictionary(x => x.App, y => y);
 	}
 
 	public Sprite GetIcon(AppEnum app)
@@ -33,4 +38,8 @@ public class Importer
 		return _sceneDictionary[app];
 	}
 
+	public AppConfigurations GetAppConfigs(AppEnum app)
+	{
+		return _configurationDictionary[app];
+	}
 }
