@@ -1,15 +1,16 @@
-﻿using UnityEditor;
+﻿using App;
+using UnityEditor;
 using UnityEngine;
 
 public class AppName: MonoBehaviour {
 
-	private SceneAsset _scene;
+	private AppConfigurations _app;
 
-	public void SetSceneName(SceneAsset scene){
-		_scene = scene;
+	public void SetApp(AppConfigurations app){
+		this._app = app;
 	}
 
 	public void GetLoaded(){
-		AppController.Instance.LoadScene(_scene);
+		AppController.Instance.LoadScene(_app);
 	}
 }

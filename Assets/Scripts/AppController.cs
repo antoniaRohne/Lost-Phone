@@ -17,13 +17,15 @@ public class AppController : MonoBehaviour {
 	
 	[SerializeField]
 	private GameObject _pushNotificationPrefab;
+	
+	[SerializeField]
+	private GameObject _unlockPanelPrefab;
 
 	[SerializeField]
 	private GameObject _appsGrid;
 
 	[SerializeField]
 	private GameObject _mainScreenObjects;
-	//
 	
 	[SerializeField]
 	private ListObject<AppConfigurations> _appListObject;
@@ -35,7 +37,7 @@ public class AppController : MonoBehaviour {
 
 	public TimerModel Timer;
 	
-	private readonly EventFactory _eventFactory = new EventFactory();
+	public EventFactory EventFactory = new EventFactory();
 	private Importer _importer;
 
 	private List<ContactModel> _contacts;
@@ -64,26 +66,32 @@ public class AppController : MonoBehaviour {
 		foreach(var app in (AppEnum[]) Enum.GetValues(typeof(AppEnum)))
 		{
 			var g = Instantiate(_appIconPrefab, _appsGrid.transform);
-			g.GetComponent<AppName>().SetSceneName(_importer.GetScene(app));
+			g.GetComponent<AppName>().SetApp(_importer.GetAppConfigs(app));
 			g.GetComponent<Image>().sprite = _importer.GetIcon(app);
 		}
 
 		//Events
-		_eventFactory.CreateEvent("Calendar", Timer.Time.Value.AddMinutes(2), Timer, _pushNotificationPrefab, _importer.GetAppConfigs(AppEnum.Calendar));
+		EventFactory.CreateEvent("Calendar", Timer.Time.Value.AddMinutes(2), Timer, _pushNotificationPrefab, _importer.GetAppConfigs(AppEnum.Calendar));
 		
 	}
 
-	public void LoadScene(SceneAsset scene){
-		var operation = SceneManager.LoadSceneAsync(scene.name,LoadSceneMode.Additive);
-		operation.completed += _=>
+	public void LoadScene(AppConfigurations app){
+		if (app.LockingState)
 		{
-			SceneManager.SetActiveScene(SceneManager.GetSceneByName(scene.name));
-		};				
-
-		if (scene.name == "Messages")
-		_eventFactory.CreateEvent(scene.name, Timer.Time.Value.AddMinutes(1), Timer, _pushNotificationPrefab,_importer.GetAppConfigs(AppEnum.Messages));
+			Instantiate(_unlockPanelPrefab);
+		}
+		else
+		{
+			var operation = SceneManager.LoadSceneAsync(app.Scene.name,LoadSceneMode.Additive);
 		
-		_mainScreenObjects.SetActive(false);
+			operation.completed += _=>
+			{
+				SceneManager.SetActiveScene(SceneManager.GetSceneByName(app.Scene.name));
+			};
+		
+			_mainScreenObjects.SetActive(false);
+		}
+		
 	}
 
 	public void BackToMainMenu(){

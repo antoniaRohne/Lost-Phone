@@ -633,9 +633,10 @@ MonoBehaviour:
     type: 2}
   _pushNotificationPrefab: {fileID: 1559819046625940, guid: ed2c4245565691246a9fc697691fc09c,
     type: 2}
+  _unlockPanelPrefab: {fileID: 1148940633682000, guid: 489132dd1e5c9f9438ea40b3eaf8c851,
+    type: 2}
   _appsGrid: {fileID: 1712354430}
   _mainScreenObjects: {fileID: 1084686646}
-  _appListObject: {fileID: 11400000, guid: de384a9298ab5434f87a9e01b6b33207, type: 2}
 --- !u!4 &2027542360
 Transform:
   m_ObjectHideFlags: 0
