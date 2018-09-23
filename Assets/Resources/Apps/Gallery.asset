@@ -3,7 +3,7 @@
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
@@ -12,5 +12,8 @@ MonoBehaviour:
   m_Name: Gallery
   m_EditorClassIdentifier: 
   App: 3
-  Icon: {fileID: 21300000, guid: 104b95ee7b72f0142828de1101428855, type: 3}
+  Icon: {fileID: 21300000, guid: e460c533a82244d32bfe07ffcc1cb983, type: 3}
   Scene: {fileID: 102900000, guid: 8214556aa8ac7004c9b08a94691d48c2, type: 3}
+  PushNoteContent: 
+  Password: 
+  LockingState: 0

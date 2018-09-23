@@ -8,19 +8,21 @@ public class ContactView : MonoBehaviour
 {
 	[SerializeField]
 	private Text _surname;
-	[SerializeField]
-	private Text _name;
-	
-	public string Surname
-	{
-		get { return _surname.text; }
-		set { _surname.text = value; }
-	}
-	
-	public string Name
-	{
-		get { return _name.text; }
-		set { _name.text = value; }
-	}
 
+	public ContactModel _contact;
+	
+	public ContactModel Contact
+	{
+		get { return _contact; }
+		set { _contact = value;
+			_surname.text = value.Surname;
+		}
+	}
+	
+	public void OnClick()
+	{
+		GameObject.Find("InAppController").GetComponent<IInAppController>().ButtonOnClick(_contact);
+
+	}
+	
 }

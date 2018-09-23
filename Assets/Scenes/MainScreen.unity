@@ -582,9 +582,9 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 66
-    m_FontStyle: 1
+    m_Font: {fileID: 12800000, guid: 4506bf6ca285b494ab0993e12703d5e6, type: 3}
+    m_FontSize: 45
+    m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 66
@@ -629,14 +629,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cb21eeb09b233441a612c110ae28c85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _appIconPrefab: {fileID: 1201570493872674, guid: 75a2a63085854c64c9bc0b10c8c0a073,
-    type: 2}
-  _pushNotificationPrefab: {fileID: 1559819046625940, guid: ed2c4245565691246a9fc697691fc09c,
-    type: 2}
-  _unlockPanelPrefab: {fileID: 1148940633682000, guid: 489132dd1e5c9f9438ea40b3eaf8c851,
-    type: 2}
   _appsGrid: {fileID: 1712354430}
   _mainScreenObjects: {fileID: 1084686646}
+  _appListObject: {fileID: 11400000, guid: 68688b0dfaa8ca04490d553ed69bf458, type: 2}
+  _prefabListObject: {fileID: 11400000, guid: a2a6e7b7a8d4ad44785f31056550ee3e, type: 2}
 --- !u!4 &2027542360
 Transform:
   m_ObjectHideFlags: 0

@@ -3,13 +3,14 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class MemoInAppController : MonoBehaviour, InAppController {
+public class MemoInAppController : MonoBehaviour, IInAppController {
 
 	//maybe get rid of mono through scriptable objects from Importer/AppController
 	
 	private MemoCSVReader _csvReader;
 
 	[SerializeField] private GameObject _memo;
+	[SerializeField] private GameObject _parent;
 	[SerializeField] private Text _newMemoText;
 	
 	public void Start()
@@ -34,9 +35,15 @@ public class MemoInAppController : MonoBehaviour, InAppController {
 		}
 	}
 
+	public void ButtonOnClick(ContactModel c)
+	{
+		throw new System.NotImplementedException();
+	}
+
+
 	public void CreateNewMemo(string text) 
 	{
-		GameObject Memo = Instantiate(_memo, GameObject.Find("Content").transform); //monobehaviour -> get rid of find
+		GameObject Memo = Instantiate(_memo, _parent.transform); 
 		Memo.GetComponentInChildren<Text>().text = text;
 	}
 }

@@ -11,15 +11,6 @@ using UnityEngine.UI;
 
 public class AppController : MonoBehaviour {
 
-	//Prefabs
-	[SerializeField]
-	private GameObject _appIconPrefab;
-	
-	[SerializeField]
-	private GameObject _pushNotificationPrefab;
-	
-	[SerializeField]
-	private GameObject _unlockPanelPrefab;
 
 	[SerializeField]
 	private GameObject _appsGrid;
@@ -28,19 +19,16 @@ public class AppController : MonoBehaviour {
 	private GameObject _mainScreenObjects;
 	
 	[SerializeField]
-	private ListObject<AppConfigurations> _appListObject;
+	private ListObject _appListObject;
 	
 	[SerializeField]
-	private ListObject<GameObject> _prefabListObject;
+	private PrefabList _prefabListObject;
 
 	[SerializeField] private DateTime _starttime;
 
 	public TimerModel Timer;
 	
-	public EventFactory EventFactory = new EventFactory();
 	private Importer _importer;
-
-	private List<ContactModel> _contacts;
 	
 	public static AppController Instance = null;
 
@@ -65,20 +53,20 @@ public class AppController : MonoBehaviour {
 		//Load Sprites
 		foreach(var app in (AppEnum[]) Enum.GetValues(typeof(AppEnum)))
 		{
-			var g = Instantiate(_appIconPrefab, _appsGrid.transform);
+			var g = Instantiate(_prefabListObject.List[0], _appsGrid.transform);
 			g.GetComponent<AppName>().SetApp(_importer.GetAppConfigs(app));
 			g.GetComponent<Image>().sprite = _importer.GetIcon(app);
 		}
 
 		//Events
-		EventFactory.CreateEvent("Calendar", Timer.Time.Value.AddMinutes(2), Timer, _pushNotificationPrefab, _importer.GetAppConfigs(AppEnum.Calendar));
-		
+		var eventModel = new EventModel(Timer.Time.Value.AddMinutes(2), Timer, _prefabListObject.List[1], _importer.GetAppConfigs(AppEnum.Calendar));
 	}
 
 	public void LoadScene(AppConfigurations app){
 		if (app.LockingState)
 		{
-			Instantiate(_unlockPanelPrefab);
+			var lockingPanel = Instantiate(_prefabListObject.List[2], GameObject.Find("Canvas").transform);
+			lockingPanel.GetComponent<PasswordController>().SetApp(app);
 		}
 		else
 		{

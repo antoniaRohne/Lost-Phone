@@ -3,7 +3,7 @@
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
@@ -12,5 +12,8 @@ MonoBehaviour:
   m_Name: Memo
   m_EditorClassIdentifier: 
   App: 8
-  Icon: {fileID: 21300000, guid: 03d1149ae14cc514c8a5be250e9bdfe8, type: 3}
+  Icon: {fileID: 21300000, guid: 163d5e5b9102a4e448afc1f7e08d4efa, type: 3}
   Scene: {fileID: 102900000, guid: 689da6ed5e9736342a548ac246d87845, type: 3}
+  PushNoteContent: 
+  Password: 
+  LockingState: 0

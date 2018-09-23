@@ -1,10 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.SceneManagement;
-
-public interface InAppController
+﻿
+public interface IInAppController
 {
     void Exit();
     void LoadContent();
+    void ButtonOnClick(ContactModel c);
 }
