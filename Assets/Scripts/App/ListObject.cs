@@ -1,15 +1,13 @@
-﻿using UnityEngine;
+﻿using App;
+using UnityEngine;
 
-namespace App
-{
-	[CreateAssetMenu(menuName = "ListObject")]
-	public class ListObject<T> : ScriptableObject
+[CreateAssetMenu(menuName = "ListObject")]
+public class ListObject : ScriptableObject
 	{
-		public T[] List;
+		public AppConfigurations[] List;
 
-		public T[] GetList()
+		public AppConfigurations[] GetList()
 		{
 			return List;
 		}
 	}
-}

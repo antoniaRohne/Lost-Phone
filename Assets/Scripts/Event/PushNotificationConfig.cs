@@ -6,9 +6,9 @@ using UnityEngine.UI;
 
 public class PushNotificationConfig : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI _content;
+    [SerializeField] private Text _content;
     [SerializeField] private Image _icon;
-    [SerializeField] private TextMeshProUGUI _title;
+    [SerializeField] private Text _title;
 
     public string Content
     {

@@ -4,13 +4,13 @@ using UnityEngine;
 using UniRx;
 using Object = UnityEngine.Object;
 
-public abstract class EventModel
+public class EventModel
 {
-    protected ReactiveProperty<DateTime> StartTime  { get; private set; }
+    private ReactiveProperty<DateTime> StartTime  { get; set; }
     private readonly GameObject _pushnote;
     private AppConfigurations _app;
-   
-    protected EventModel(DateTime eventTime, TimerModel timerModel, GameObject pushnote, AppConfigurations app)
+
+    public EventModel(DateTime eventTime, TimerModel timerModel, GameObject pushnote, AppConfigurations app)
     {
         StartTime = new ReactiveProperty<DateTime>(eventTime);
         _pushnote = pushnote;
@@ -25,7 +25,7 @@ public abstract class EventModel
         
     }
 
-    protected virtual void StartEvent()
+    private void StartEvent()
     {
         Debug.Log("A event triggered.");
         var pushnote =  Object.Instantiate(_pushnote, GameObject.Find("Canvas").transform);

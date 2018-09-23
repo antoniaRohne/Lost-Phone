@@ -3,7 +3,7 @@
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
@@ -12,5 +12,8 @@ MonoBehaviour:
   m_Name: Instagram
   m_EditorClassIdentifier: 
   App: 2
-  Icon: {fileID: 21300000, guid: 56f2e23959350914c85293317838849f, type: 3}
+  Icon: {fileID: 21300000, guid: 8c7dfc8bf7b8f489a9b4cb878269cbc6, type: 3}
   Scene: {fileID: 102900000, guid: 900af26d0d23daf4a8f4a5f7ff2c2bbd, type: 3}
+  PushNoteContent: 
+  Password: 
+  LockingState: 0
