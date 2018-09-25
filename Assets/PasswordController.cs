@@ -11,14 +11,14 @@ public class PasswordController : MonoBehaviour
 	[SerializeField] private Text _inputtext;
 	[SerializeField] private Image _indicator;
 
-	ReactiveProperty<IObservable<Unit>> password { get; set; }
+	IReadOnlyReactiveProperty<string> password { get; set; }
 	AppConfigurations App;
 
 	public void SetApp(AppConfigurations app)
 	{
 		App = app;
-		password = new ReactiveProperty<IObservable<Unit>>(_inputtext.UpdateAsObservable()); //IObservable<string>
-		password.Where(x => x.Equals(App.Password)).Subscribe(x => UnlockSuccessfully());
+		password = _inputtext.ObserveEveryValueChanged(text => text.text).ToReactiveProperty();
+		password.Where(x => x.Equals(App.Password)).Subscribe(x => UnlockSuccessfully()).AddTo(this);		
 		Debug.Log(App.Password);
 	}
 

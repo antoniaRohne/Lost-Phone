@@ -7,7 +7,7 @@ using Object = UnityEngine.Object;
 public class EventModel
 {
     private ReactiveProperty<DateTime> StartTime  { get; set; }
-    private readonly GameObject _pushnote;
+    private readonly GameObject _pushnote; //Pushnotification object -> unten kein get component 
     private AppConfigurations _app;
 
     public EventModel(DateTime eventTime, TimerModel timerModel, GameObject pushnote, AppConfigurations app)
@@ -27,11 +27,11 @@ public class EventModel
 
     private void StartEvent()
     {
-        Debug.Log("A event triggered.");
-        var pushnote =  Object.Instantiate(_pushnote, GameObject.Find("Canvas").transform);
+        //Debug.Log("An event triggered.");
+        var pushnote =  Object.Instantiate(_pushnote, GameObject.Find("Canvas").transform); // static bzw. durchgeben
         pushnote.GetComponent<PushNotificationConfig>().Icon = _app.Icon;
         pushnote.GetComponent<PushNotificationConfig>().Title = _app.App.ToString();
         pushnote.GetComponent<PushNotificationConfig>().Content = _app.PushNoteContent;
-        Object.Destroy(pushnote, pushnote.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length); 
+        Object.Destroy(pushnote, pushnote.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length);  //Zeitpunkt destroy in Pushnotificationconfig
     }
 }

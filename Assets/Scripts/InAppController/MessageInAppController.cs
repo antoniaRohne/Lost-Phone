@@ -44,11 +44,11 @@ public class MessageInAppController : MonoBehaviour,IInAppController
 			var messageObject = Instantiate(_message, GameObject.Find("MessageContent").transform);
 			string message = c.Messages[c.Messages.Length-1-i];
 			string[] messageIndicator = message.Split(new char[] {'_'});
-			if (messageIndicator[0] == "O")
+			/*if (messageIndicator[0] == "O")
 			{
 				messageObject.GetComponent<RectTransform>().anchoredPosition += Vector2.left;
 				messageObject.GetComponent<Text>().alignment = TextAnchor.UpperRight;
-			}
+			}*/
 			_message.GetComponentInChildren<Text>().text = messageIndicator[1];
 		}
 	}
