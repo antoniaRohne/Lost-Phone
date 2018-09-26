@@ -178,6 +178,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _inputtext: {fileID: 114675556474623292}
   _indicator: {fileID: 114444502964102500}
+  _unlockStateImage: {fileID: 114989257085311808}
+  _unlockStateSprite: {fileID: 21300000, guid: 7b7b34ac073474b02b8969c15d49d01d, type: 3}
 --- !u!114 &114151103223460496
 MonoBehaviour:
   m_ObjectHideFlags: 1

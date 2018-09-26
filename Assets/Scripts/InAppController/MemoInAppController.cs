@@ -1,4 +1,5 @@
-﻿using UniRx;
+﻿using System;
+using UniRx;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -12,6 +13,7 @@ public class MemoInAppController : MonoBehaviour, IInAppController {
 	[SerializeField] private GameObject _memo;
 	[SerializeField] private GameObject _parent;
 	[SerializeField] private Text _newMemoText;
+	
 	
 	public void Start()
 	{
@@ -31,19 +33,28 @@ public class MemoInAppController : MonoBehaviour, IInAppController {
 		var memos = _csvReader.GetMemos();
 		foreach (string memo in memos)
 		{
-			CreateNewMemo(memo);
+			CreateMemos(memo);
 		}
 	}
 
 	public void ButtonOnClick(ContactModel c)
 	{
+		//no need here -> only an interface for clickable objects
 		throw new System.NotImplementedException();
 	}
 
 
-	public void CreateNewMemo(string text) 
+	private void CreateMemos(string text)
 	{
 		GameObject Memo = Instantiate(_memo, _parent.transform); 
 		Memo.GetComponentInChildren<Text>().text = text;
 	}
+
+	public void CreateNewMemo()
+	{
+		GameObject Memo = Instantiate(_memo, _parent.transform); 
+		Memo.GetComponentInChildren<Text>().text = _newMemoText.text;
+		_newMemoText.text = String.Empty;
+	}
+	
 }

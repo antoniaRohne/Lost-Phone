@@ -16,4 +16,4 @@ MonoBehaviour:
   Scene: {fileID: 102900000, guid: 21c2cb0a481b7014286dd1d0fad6c230, type: 3}
   PushNoteContent: 
   Password: Passwort
-  LockingState: 0
+  LockingState: 1

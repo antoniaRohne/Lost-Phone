@@ -54,7 +54,7 @@ public class AppController : MonoBehaviour {
 		foreach(var app in (AppEnum[]) Enum.GetValues(typeof(AppEnum)))
 		{
 			var g = Instantiate(_prefabListObject.List[0], _appsGrid.transform);
-			g.GetComponent<AppName>().SetApp(_importer.GetAppConfigs(app));
+			g.GetComponent<AppName>().SetApp(_importer.GetAppConfigs(app)); //Zusammenfassen in View
 			g.GetComponent<Image>().sprite = _importer.GetIcon(app);
 		}
 
@@ -63,9 +63,11 @@ public class AppController : MonoBehaviour {
 	}
 
 	public void LoadScene(AppConfigurations app){
+		
+		//Redirect that stuff to the passwordcontroller so he is asked if everything is okey
 		if (app.LockingState)
 		{
-			var lockingPanel = Instantiate(_prefabListObject.List[2], GameObject.Find("Canvas").transform);
+			var lockingPanel = Instantiate(_prefabListObject.List[2], GameObject.Find("Canvas").transform); //CANVAS STUFF
 			lockingPanel.GetComponent<PasswordController>().SetApp(app);
 		}
 		else

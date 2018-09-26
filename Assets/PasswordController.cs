@@ -1,4 +1,5 @@
 ﻿
+using System.Collections;
 using App;
 using UniRx;
 using UniRx.Triggers;
@@ -10,6 +11,9 @@ public class PasswordController : MonoBehaviour
 
 	[SerializeField] private Text _inputtext;
 	[SerializeField] private Image _indicator;
+	[SerializeField] private Image _unlockStateImage;
+	
+	[SerializeField] private Sprite _unlockStateSprite;
 
 	IReadOnlyReactiveProperty<string> password { get; set; }
 	AppConfigurations App;
@@ -27,6 +31,15 @@ public class PasswordController : MonoBehaviour
 		Debug.Log("unlocked");
 		App.LockingState = false;
 		_indicator.color = Color.green;
+		_unlockStateImage.sprite = _unlockStateSprite;
+		StartCoroutine(LoadNewScene());
+		
+	}
+
+	IEnumerator LoadNewScene()
+	{
+		yield return new WaitForSeconds(3);
 		AppController.Instance.LoadScene(App);
+		Destroy(this.gameObject);
 	}
 }
