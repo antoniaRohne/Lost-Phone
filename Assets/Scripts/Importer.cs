@@ -20,9 +20,9 @@ public class Importer
 
 	private void Setup()
 	{
-		_sceneDictionary = _apps.ToDictionary(x => x.App, y => y.Scene);
-		_iconDictionary = _apps.ToDictionary(x => x.App, y => y.Icon);
-		_configurationDictionary = _apps.ToDictionary(x => x.App, y => y);
+		_sceneDictionary = _apps.ToDictionary(x => x.Name, y => y.Scene);
+		_iconDictionary = _apps.ToDictionary(x => x.Name, y => y.Icon);
+		_configurationDictionary = _apps.ToDictionary(x => x.Name, y => y);
 	}
 
 	public Sprite GetIcon(AppEnum app)

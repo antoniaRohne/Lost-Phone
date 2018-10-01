@@ -11,9 +11,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5202461609b54a7fa29ba7cee9467a02, type: 3}
   m_Name: Gallery
   m_EditorClassIdentifier: 
-  App: 3
-  Icon: {fileID: 21300000, guid: e460c533a82244d32bfe07ffcc1cb983, type: 3}
-  Scene: {fileID: 102900000, guid: 8214556aa8ac7004c9b08a94691d48c2, type: 3}
-  PushNoteContent: 
-  Password: 
-  LockingState: 0
+  _app: 3
+  _icon: {fileID: 21300000, guid: e460c533a82244d32bfe07ffcc1cb983, type: 3}
+  _scene: {fileID: 102900000, guid: 8214556aa8ac7004c9b08a94691d48c2, type: 3}
+  _lockingState: 0
+  _password: 
+  _pushNoteContent: 

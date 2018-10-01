@@ -11,9 +11,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5202461609b54a7fa29ba7cee9467a02, type: 3}
   m_Name: Mail
   m_EditorClassIdentifier: 
-  App: 6
-  Icon: {fileID: 21300000, guid: 9be9ae48cea07404ba22e29fee9554ef, type: 3}
-  Scene: {fileID: 102900000, guid: 3b6ab8b0452cce84fb2aaeafb7dd6bb4, type: 3}
-  PushNoteContent: 
-  Password: 
-  LockingState: 0
+  _app: 6
+  _icon: {fileID: 21300000, guid: 64883e218fde34d4ba187da517c43a0e, type: 3}
+  _scene: {fileID: 102900000, guid: 3b6ab8b0452cce84fb2aaeafb7dd6bb4, type: 3}
+  _lockingState: 0
+  _password: 
+  _pushNoteContent: 

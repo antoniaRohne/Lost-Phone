@@ -30,7 +30,7 @@ public class EventModel
         //Debug.Log("An event triggered.");
         var pushnote =  Object.Instantiate(_pushnote, GameObject.Find("Canvas").transform); // static bzw. durchgeben
         pushnote.GetComponent<PushNotificationConfig>().Icon = _app.Icon;
-        pushnote.GetComponent<PushNotificationConfig>().Title = _app.App.ToString();
+        pushnote.GetComponent<PushNotificationConfig>().Title = _app.Name.ToString();
         pushnote.GetComponent<PushNotificationConfig>().Content = _app.PushNoteContent;
         Object.Destroy(pushnote, pushnote.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length);  //Zeitpunkt destroy in Pushnotificationconfig
     }

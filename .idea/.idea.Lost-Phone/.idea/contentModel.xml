@@ -5,7 +5,41 @@
     <e p="C:\Users\AntoniaRohne\Documents\Lost-Phone" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
-        <e p="PasswordController.cs" t="Include" />
+        <e p="Imports" t="Include">
+          <e p="Simple UI" t="Include">
+            <e p="Fonts" t="Include">
+              <e p="OFL.txt" t="Include" />
+            </e>
+            <e p="Samples" t="Include">
+              <e p="IconPreview.cs" t="Include" />
+            </e>
+          </e>
+          <e p="TextMesh Pro" t="Include">
+            <e p="Resources" t="Include">
+              <e p="LineBreaking Following Characters.txt" t="Include" />
+              <e p="LineBreaking Leading Characters.txt" t="Include" />
+              <e p="Shaders" t="Include">
+                <e p="TMP_Bitmap-Custom-Atlas.shader" t="Include" />
+                <e p="TMP_Bitmap-Mobile.shader" t="Include" />
+                <e p="TMP_Bitmap.shader" t="Include" />
+                <e p="TMP_SDF Overlay.shader" t="Include" />
+                <e p="TMP_SDF-Mobile Masking.shader" t="Include" />
+                <e p="TMP_SDF-Mobile Overlay.shader" t="Include" />
+                <e p="TMP_SDF-Mobile.shader" t="Include" />
+                <e p="TMP_SDF-Surface-Mobile.shader" t="Include" />
+                <e p="TMP_SDF-Surface.shader" t="Include" />
+                <e p="TMP_SDF.shader" t="Include" />
+                <e p="TMP_Sprite.shader" t="Include" />
+                <e p="TMPro.cginc" t="Include" />
+                <e p="TMPro_Properties.cginc" t="Include" />
+                <e p="TMPro_Surface.cginc" t="Include" />
+              </e>
+            </e>
+            <e p="Sprites" t="Include">
+              <e p="EmojiOne Attribution.txt" t="Include" />
+            </e>
+          </e>
+        </e>
         <e p="Plugins" t="Include">
           <e p="UniRx" t="Include">
             <e p="Examples" t="Include">
@@ -391,6 +425,10 @@
             <e p="AppEnum.cs" t="Include" />
             <e p="AppName.cs" t="Include" />
             <e p="ListObject.cs" t="Include" />
+            <e p="Password" t="Include">
+              <e p="PasswordController.cs" t="Include" />
+              <e p="PasswordPanelView.cs" t="Include" />
+            </e>
           </e>
           <e p="AppController.cs" t="Include" />
           <e p="Contact" t="Include">
@@ -401,6 +439,7 @@
           <e p="CSVReader" t="Include">
             <e p="ContactCSVReader.cs" t="Include" />
             <e p="ICSVReader.cs" t="Include" />
+            <e p="ImageImporter.cs" t="Include" />
             <e p="MemoCSVReader.cs" t="Include" />
             <e p="MessageCSVReader.cs" t="Include" />
           </e>
@@ -411,46 +450,15 @@
           <e p="Importer.cs" t="Include" />
           <e p="InAppController" t="Include">
             <e p="ContactController.cs" t="Include" />
+            <e p="GalleryInAppController.cs" t="Include" />
             <e p="IInAppController.cs" t="Include" />
             <e p="MemoInAppController.cs" t="Include" />
             <e p="MessageInAppController.cs" t="Include" />
+            <e p="SettingsInAppController.cs" t="Include" />
           </e>
           <e p="Timer" t="Include">
             <e p="TimerModel.cs" t="Include" />
             <e p="TimerView.cs" t="Include" />
-          </e>
-        </e>
-        <e p="Simple UI" t="Include">
-          <e p="Fonts" t="Include">
-            <e p="OFL.txt" t="Include" />
-          </e>
-          <e p="Samples" t="Include">
-            <e p="IconPreview.cs" t="Include" />
-          </e>
-        </e>
-        <e p="TextMesh Pro" t="Include">
-          <e p="Resources" t="Include">
-            <e p="LineBreaking Following Characters.txt" t="Include" />
-            <e p="LineBreaking Leading Characters.txt" t="Include" />
-            <e p="Shaders" t="Include">
-              <e p="TMP_Bitmap-Custom-Atlas.shader" t="Include" />
-              <e p="TMP_Bitmap-Mobile.shader" t="Include" />
-              <e p="TMP_Bitmap.shader" t="Include" />
-              <e p="TMP_SDF Overlay.shader" t="Include" />
-              <e p="TMP_SDF-Mobile Masking.shader" t="Include" />
-              <e p="TMP_SDF-Mobile Overlay.shader" t="Include" />
-              <e p="TMP_SDF-Mobile.shader" t="Include" />
-              <e p="TMP_SDF-Surface-Mobile.shader" t="Include" />
-              <e p="TMP_SDF-Surface.shader" t="Include" />
-              <e p="TMP_SDF.shader" t="Include" />
-              <e p="TMP_Sprite.shader" t="Include" />
-              <e p="TMPro.cginc" t="Include" />
-              <e p="TMPro_Properties.cginc" t="Include" />
-              <e p="TMPro_Surface.cginc" t="Include" />
-            </e>
-          </e>
-          <e p="Sprites" t="Include">
-            <e p="EmojiOne Attribution.txt" t="Include" />
           </e>
         </e>
       </e>

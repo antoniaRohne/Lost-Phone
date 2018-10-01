@@ -27,8 +27,8 @@ public class AppController : MonoBehaviour {
 	[SerializeField] private DateTime _starttime;
 
 	public TimerModel Timer;
-	
 	private Importer _importer;
+	private readonly PasswordController _passwordController = new PasswordController();
 	
 	public static AppController Instance = null;
 
@@ -62,16 +62,9 @@ public class AppController : MonoBehaviour {
 		var eventModel = new EventModel(Timer.Time.Value.AddMinutes(2), Timer, _prefabListObject.List[1], _importer.GetAppConfigs(AppEnum.Calendar));
 	}
 
-	public void LoadScene(AppConfigurations app){
-		
-		//Redirect that stuff to the passwordcontroller so he is asked if everything is okey
-		if (app.LockingState)
-		{
-			var lockingPanel = Instantiate(_prefabListObject.List[2], GameObject.Find("Canvas").transform); //CANVAS STUFF
-			lockingPanel.GetComponent<PasswordController>().SetApp(app);
-		}
-		else
-		{
+	public void LoadScene(AppConfigurations app)
+	{
+		if(!_passwordController.CheckApp(app,_prefabListObject.GetList()[2])){
 			var operation = SceneManager.LoadSceneAsync(app.Scene.name,LoadSceneMode.Additive);
 		
 			operation.completed += _=>
@@ -83,6 +76,20 @@ public class AppController : MonoBehaviour {
 		}
 		
 	}
+	
+	public void LoadScene(AppEnum app)
+	{
+		AppConfigurations config = _importer.GetAppConfigs(app);
+		var operation = SceneManager.LoadSceneAsync(config.Scene.name,LoadSceneMode.Additive);
+		
+		operation.completed += _=>
+		{
+			SceneManager.SetActiveScene(SceneManager.GetSceneByName(config.Scene.name));
+		};
+		
+		_mainScreenObjects.SetActive(false);
+	}
+
 
 	public void BackToMainMenu(){
 		_mainScreenObjects.SetActive(true);

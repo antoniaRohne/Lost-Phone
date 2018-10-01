@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 224481120253922930}
   - component: {fileID: 222184517639385066}
   - component: {fileID: 114246013522457616}
-  - component: {fileID: 114105791668387266}
+  - component: {fileID: 114398213123008184}
   m_Layer: 5
   m_Name: UnlockPanel
   m_TagString: Untagged
@@ -165,21 +165,6 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Enter password...
---- !u!114 &114105791668387266
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1148940633682000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0474a9f1614c464cbba8a9b3303ebae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _inputtext: {fileID: 114675556474623292}
-  _indicator: {fileID: 114444502964102500}
-  _unlockStateImage: {fileID: 114989257085311808}
-  _unlockStateSprite: {fileID: 21300000, guid: 7b7b34ac073474b02b8969c15d49d01d, type: 3}
 --- !u!114 &114151103223460496
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -219,14 +204,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.8392157}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.7137255}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 8bba60bd272ff4978982a12a88f56b11, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -234,6 +219,22 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114398213123008184
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1148940633682000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23516331f1916fd44a7b178c151b7c4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _inputtext: {fileID: 114675556474623292}
+  _indicator: {fileID: 114444502964102500}
+  _unlockStateImage: {fileID: 114989257085311808}
+  passwordPanelPrefab: {fileID: 1148940633682000}
+  _unlockStateSprite: {fileID: 21300000, guid: 7b7b34ac073474b02b8969c15d49d01d, type: 3}
 --- !u!114 &114444502964102500
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -510,14 +511,14 @@ RectTransform:
   m_GameObject: {fileID: 1574348165225258}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 0.3375, z: 1}
+  m_LocalScale: {x: 1, y: 0.4, z: 1}
   m_Children: []
   m_Father: {fileID: 224481120253922930}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 29}
   m_SizeDelta: {x: 0, y: 100}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!224 &224481120253922930
@@ -526,9 +527,9 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1148940633682000}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.88586, y: 0.88586, z: 0.88586}
+  m_LocalScale: {x: 1.1035469, y: 1.1035469, z: 0.73569787}
   m_Children:
   - {fileID: 224279273604626500}
   - {fileID: 224912136708343200}
@@ -539,8 +540,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0.000045776367, y: 7.4998016}
+  m_SizeDelta: {x: -72.993, y: -140.95}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224678925267945640
 RectTransform:
