@@ -2,7 +2,7 @@
 using System.Linq;
 using UnityEngine;
 
-public class ImageImporter
+public class ImageImporter: ICSVReader<Sprite>
 {
     private Sprite[] _images;
     
@@ -11,9 +11,8 @@ public class ImageImporter
        _images = Resources.LoadAll<Sprite>("GalleryImages");
     }
 
-    public List<Sprite> GetImages()
+    public List<Sprite> GetList()
     {
         return _images.ToList();
     }
-    
 }

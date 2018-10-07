@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 222400732017381042}
   - component: {fileID: 114871113793362756}
   - component: {fileID: 114961944547590558}
-  - component: {fileID: 114014683164689342}
+  - component: {fileID: 114118746740457614}
   m_Layer: 5
   m_Name: AppPrefab
   m_TagString: Untagged
@@ -30,7 +30,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &114014683164689342
+--- !u!114 &114118746740457614
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -38,7 +38,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1201570493872674}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4103f1625534ece43b26d6dff168e9bf, type: 3}
+  m_Script: {fileID: 11500000, guid: 986f672fe7da4accb64e70bd861bccdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &114871113793362756
@@ -107,7 +107,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114014683164689342}
+      - m_Target: {fileID: 114118746740457614}
         m_MethodName: GetLoaded
         m_Mode: 1
         m_Arguments:
@@ -140,8 +140,8 @@ RectTransform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 50, y: -50}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 49, y: -40}
+  m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}

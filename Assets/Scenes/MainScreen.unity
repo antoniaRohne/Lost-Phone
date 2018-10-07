@@ -630,6 +630,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _appsGrid: {fileID: 1712354430}
+  _canvas: {fileID: 1115319752}
   _mainScreenObjects: {fileID: 1084686646}
   _appListObject: {fileID: 11400000, guid: 68688b0dfaa8ca04490d553ed69bf458, type: 2}
   _prefabListObject: {fileID: 11400000, guid: a2a6e7b7a8d4ad44785f31056550ee3e, type: 2}

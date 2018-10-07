@@ -12,24 +12,24 @@ using UnityEngine.UI;
 public class PasswordController
 {
 	private PasswordPanelView view;
-	public bool CheckApp(IAppLockingSystem app, GameObject prefab)
+	public bool CheckApp(IAppLockingSystem app, GameObject prefab, GameObject parent)
 	{
 		if (app.LockingState)
 		{
-			StartUnlockingProcess(app, prefab);
+			StartUnlockingProcess(app, prefab, parent);
 			return true;
 		}
 			return false;
 		
 	}
 
-	private void StartUnlockingProcess(IAppLockingSystem app, GameObject prefab)
+	private void StartUnlockingProcess(IAppLockingSystem app, GameObject prefab, GameObject parent)
 	{
-		var lockingPanel = GameObject.Instantiate(prefab, GameObject.Find("Canvas").transform); //CANVAS STUFF
+		var lockingPanel = GameObject.Instantiate(prefab, parent.transform); 
 		view = lockingPanel.GetComponent<PasswordPanelView>();
 		view.CreatePasswordPanel(app);
 		//view.password.Where(x => x.Equals(app.Password)).Subscribe(x => UnlockSuccessfully()).AddTo(this);
-		lockingPanel.GetComponent<PasswordPanelView>().password.Where(x => x.Equals(app.Password)).Subscribe(x => UnlockSuccessfully(app));
+		view.password.Where(x => x.Equals(app.Password)).Subscribe(x => UnlockSuccessfully(app));
 	}
 
 	private void UnlockSuccessfully(IAppLockingSystem app)

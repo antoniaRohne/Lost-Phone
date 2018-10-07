@@ -1,19 +1,15 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Timers;
 using App;
-using UnityEditor;
 using UnityEngine;
-using UnityEngine.Experimental.Audio.Google;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class AppController : MonoBehaviour {
 
-
 	[SerializeField]
 	private GameObject _appsGrid;
+	
+	[SerializeField]
+	private GameObject _canvas;
 
 	[SerializeField]
 	private GameObject _mainScreenObjects;
@@ -53,9 +49,9 @@ public class AppController : MonoBehaviour {
 		//Load Sprites
 		foreach(var app in (AppEnum[]) Enum.GetValues(typeof(AppEnum)))
 		{
-			var g = Instantiate(_prefabListObject.List[0], _appsGrid.transform);
-			g.GetComponent<AppName>().SetApp(_importer.GetAppConfigs(app)); //Zusammenfassen in View
-			g.GetComponent<Image>().sprite = _importer.GetIcon(app);
+			var g = Instantiate(_prefabListObject.List[0], _appsGrid.transform).GetComponent<AppView>(); //Zusammenfassen in View -> brauche ich ein getComponent
+			g.SetAppIcon(_importer.GetIcon(app));
+			g.SetApp(_importer.GetAppConfigs(app));  
 		}
 
 		//Events
@@ -64,7 +60,7 @@ public class AppController : MonoBehaviour {
 
 	public void LoadScene(AppConfigurations app)
 	{
-		if(!_passwordController.CheckApp(app,_prefabListObject.GetList()[2])){
+		if(!_passwordController.CheckApp(app,_prefabListObject.GetList()[2], _canvas)){
 			var operation = SceneManager.LoadSceneAsync(app.Scene.name,LoadSceneMode.Additive);
 		
 			operation.completed += _=>
@@ -91,10 +87,11 @@ public class AppController : MonoBehaviour {
 	}
 
 
-	public void BackToMainMenu(){
+	public void BackToMainMenu()
+	{
 		_mainScreenObjects.SetActive(true);
 	}
-	
+
 }
 
 

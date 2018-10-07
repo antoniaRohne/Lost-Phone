@@ -33,7 +33,7 @@ public class GalleryInAppController : MonoBehaviour {
 
     private void LoadContent()
     {
-        var pics = _imageImporter.GetImages();
+        var pics = _imageImporter.GetList();
         foreach (Sprite pic in pics)
         {
             _images.Add(pic);

@@ -4,16 +4,13 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class MemoInAppController : MonoBehaviour, IInAppController {
-
-	//maybe get rid of mono through scriptable objects from Importer/AppController
-	
-	private MemoCSVReader _csvReader;
+public class MemoInAppController: MonoBehaviour{
 
 	[SerializeField] private GameObject _memo;
 	[SerializeField] private GameObject _parent;
 	[SerializeField] private Text _newMemoText;
 	
+	private MemoCSVReader _csvReader;	
 	
 	public void Start()
 	{
@@ -37,22 +34,15 @@ public class MemoInAppController : MonoBehaviour, IInAppController {
 		}
 	}
 
-	public void ButtonOnClick(ContactModel c)
-	{
-		//no need here -> only an interface for clickable objects
-		throw new System.NotImplementedException();
-	}
-
-
 	private void CreateMemos(string text)
 	{
-		GameObject Memo = Instantiate(_memo, _parent.transform); 
+		GameObject Memo = GameObject.Instantiate(_memo, _parent.transform); 
 		Memo.GetComponentInChildren<Text>().text = text;
 	}
 
 	public void CreateNewMemo()
 	{
-		GameObject Memo = Instantiate(_memo, _parent.transform); 
+		GameObject Memo = GameObject.Instantiate(_memo, _parent.transform); 
 		Memo.GetComponentInChildren<Text>().text = _newMemoText.text;
 		_newMemoText.text = String.Empty;
 	}

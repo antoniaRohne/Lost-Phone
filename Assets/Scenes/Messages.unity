@@ -392,7 +392,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _contact: {fileID: 1959349428876736, guid: febfc51e37e263a4da004bdb7aee2d1b, type: 2}
-  _parent: {fileID: 1968412071}
+  _contactParent: {fileID: 1968412071}
+  _messagePanelParent: {fileID: 696300717}
   _messagePanel: {fileID: 1095057168112512, guid: af3c5d43c603c15489045c3d03e9fe4b,
     type: 2}
   _message: {fileID: 1527029947148452, guid: 7afefe072cf06834fba26920ce2b6db2, type: 2}

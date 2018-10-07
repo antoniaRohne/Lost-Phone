@@ -15,3 +15,6 @@ MonoBehaviour:
   - {fileID: 1201570493872674, guid: 75a2a63085854c64c9bc0b10c8c0a073, type: 2}
   - {fileID: 1559819046625940, guid: ed2c4245565691246a9fc697691fc09c, type: 2}
   - {fileID: 1148940633682000, guid: 489132dd1e5c9f9438ea40b3eaf8c851, type: 2}
+  appPrefab: {fileID: 0}
+  eventPrefab: {fileID: 0}
+  passwordPanelPrefab: {fileID: 0}

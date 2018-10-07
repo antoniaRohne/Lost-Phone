@@ -9,7 +9,8 @@ public class MessageInAppController : MonoBehaviour,IInAppController
 {
 	private ContactCSVReader _csvContactReader;
 	[SerializeField] private GameObject _contact;
-	[SerializeField] private GameObject _parent;
+	[SerializeField] private GameObject _contactParent;
+	[SerializeField] private GameObject _messagePanelParent;
 	[SerializeField] private GameObject _messagePanel;
 	[SerializeField] private GameObject _message;
 	
@@ -32,7 +33,7 @@ public class MessageInAppController : MonoBehaviour,IInAppController
 		var contacts = _csvContactReader.GetModelList();
 		foreach (ContactModel contact in contacts)
 		{
-			GameObject contactGameObject = Instantiate(_contact, _parent.transform);
+			GameObject contactGameObject = Instantiate(_contact, _contactParent.transform);
 			var view = contactGameObject.GetComponent<ContactView>();
 			view.Contact = contact;
 		}
@@ -40,7 +41,7 @@ public class MessageInAppController : MonoBehaviour,IInAppController
 
 	public void ButtonOnClick(ContactModel c)
 	{
-		GameObject panel = Instantiate(_messagePanel, GameObject.Find("Canvas").transform);
+		GameObject panel = Instantiate(_messagePanel, _messagePanelParent.transform);
 		for(var i = 0; i<c.Messages.Length;i++){
 			var messageObject = Instantiate(_message, GameObject.Find("MessageContent").transform);
 			string message = c.Messages[c.Messages.Length-1-i];

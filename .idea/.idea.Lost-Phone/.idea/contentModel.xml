@@ -6,6 +6,11 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Imports" t="Include">
+          <e p="Clock" t="Include">
+            <e p="Scripts" t="Include">
+              <e p="Clock.cs" t="Include" />
+            </e>
+          </e>
           <e p="Simple UI" t="Include">
             <e p="Fonts" t="Include">
               <e p="OFL.txt" t="Include" />
@@ -423,7 +428,7 @@
           <e p="App" t="Include">
             <e p="AppConfigurations.cs" t="Include" />
             <e p="AppEnum.cs" t="Include" />
-            <e p="AppName.cs" t="Include" />
+            <e p="AppView.cs" t="Include" />
             <e p="ListObject.cs" t="Include" />
             <e p="Password" t="Include">
               <e p="PasswordController.cs" t="Include" />
@@ -431,12 +436,17 @@
             </e>
           </e>
           <e p="AppController.cs" t="Include" />
+          <e p="Calls" t="Include">
+            <e p="Call.cs" t="Include" />
+            <e p="CallView.cs" t="Include" />
+          </e>
           <e p="Contact" t="Include">
             <e p="ContactModel.cs" t="Include" />
             <e p="ContactPanelView.cs" t="Include" />
             <e p="ContactView.cs" t="Include" />
           </e>
           <e p="CSVReader" t="Include">
+            <e p="CallCSVReader.cs" t="Include" />
             <e p="ContactCSVReader.cs" t="Include" />
             <e p="ICSVReader.cs" t="Include" />
             <e p="ImageImporter.cs" t="Include" />
@@ -449,9 +459,12 @@
           </e>
           <e p="Importer.cs" t="Include" />
           <e p="InAppController" t="Include">
+            <e p="CallsInAppController.cs" t="Include" />
+            <e p="ClockInAppController.cs" t="Include" />
             <e p="ContactController.cs" t="Include" />
             <e p="GalleryInAppController.cs" t="Include" />
             <e p="IInAppController.cs" t="Include" />
+            <e p="InternetInAppController.cs" t="Include" />
             <e p="MemoInAppController.cs" t="Include" />
             <e p="MessageInAppController.cs" t="Include" />
             <e p="SettingsInAppController.cs" t="Include" />
