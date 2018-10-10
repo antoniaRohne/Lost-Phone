@@ -6,14 +6,14 @@ namespace App
     [CreateAssetMenu(menuName = "App")]
     public class AppConfigurations : ScriptableObject, IAppLockingSystem, IAppSceneLoading
     {
-        public AppEnum _app;
-        public Sprite _icon;
-        public SceneAsset _scene;
-        public bool _lockingState;
-        public string _password;
-        public string _pushNoteContent;
-       
-       
+        [SerializeField] private AppEnum _app;
+        [SerializeField] private Sprite _icon;
+        [SerializeField] private SceneAsset _scene;
+        [SerializeField] private bool _lockingState;
+        [SerializeField] private string _password;
+        [SerializeField] private string _pushNoteContent;
+
+
         public SceneAsset Scene
         {
             get { return _scene; }

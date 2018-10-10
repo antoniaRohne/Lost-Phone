@@ -47,7 +47,7 @@ public class ContactPanelView: MonoBehaviour
         set { _image = value; }
     }
 
-    void Update()
+    private void Update()
     {
         if (Input.GetMouseButton(0))
         {

@@ -1,7 +1,4 @@
-﻿using System.Net.Mime;
-using System.Xml.Schema;
-using TMPro;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class PushNotificationConfig : MonoBehaviour

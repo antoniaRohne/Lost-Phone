@@ -391,7 +391,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd1a1aa98769952479d25a65537af3d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _contact: {fileID: 1959349428876736, guid: febfc51e37e263a4da004bdb7aee2d1b, type: 2}
+  _contact: {fileID: 114020386971514366, guid: febfc51e37e263a4da004bdb7aee2d1b, type: 2}
   _contactParent: {fileID: 1968412071}
   _messagePanelParent: {fileID: 696300717}
   _messagePanel: {fileID: 1095057168112512, guid: af3c5d43c603c15489045c3d03e9fe4b,

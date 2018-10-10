@@ -15,5 +15,5 @@ MonoBehaviour:
   _icon: {fileID: 21300000, guid: 92d6e46e01ee949f1a46fc19472bcef7, type: 3}
   _scene: {fileID: 102900000, guid: b10d017cb0fd07749aeca9871dbcaad7, type: 3}
   _lockingState: 0
-  _password: 
+  _password: passwort
   _pushNoteContent: 

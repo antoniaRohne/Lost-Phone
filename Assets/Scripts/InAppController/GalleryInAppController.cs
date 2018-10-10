@@ -1,18 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using UniRx;
+﻿using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Experimental.UIElements.StyleEnums;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GalleryInAppController : MonoBehaviour {
 
-    //maybe get rid of mono through scriptable objects from Importer/AppController
-
     private ImageImporter _imageImporter;
     private List<Sprite> _images;
-    private int currentIndex;
+    private int _currentIndex;
 
     [SerializeField] private Image _currentImage;
 	
@@ -21,7 +16,7 @@ public class GalleryInAppController : MonoBehaviour {
         //Load Contact Data
         _imageImporter = new ImageImporter();
         _images = new List<Sprite>();
-        currentIndex = 0;
+        _currentIndex = 0;
         LoadContent();
     }
 
@@ -38,23 +33,23 @@ public class GalleryInAppController : MonoBehaviour {
         {
             _images.Add(pic);
         }
-        _currentImage.sprite = _images[currentIndex];
+        _currentImage.sprite = _images[_currentIndex];
     }
 
 
-    public void onNext()
+    public void OnNext()
     {
-        if(currentIndex +1 < _images.Count)
-        _currentImage.sprite = _images[++currentIndex];
-        //currentIndex++;
+        if(_currentIndex +1 < _images.Count)
+        _currentImage.sprite = _images[++_currentIndex];
+        
     }
     
-    public void onPrevious()
+    public void OnPrevious()
     {
-        if (currentIndex - 1 > 0)
+        if (_currentIndex - 1 >= 0)
         {
-            _currentImage.sprite = _images[--currentIndex];
-            //currentIndex--;
+            _currentImage.sprite = _images[--_currentIndex];
         }
+        
     }
 }

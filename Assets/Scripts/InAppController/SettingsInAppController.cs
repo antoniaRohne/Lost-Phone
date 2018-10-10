@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UniRx;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class SettingsInAppController : MonoBehaviour
 {
@@ -22,12 +19,11 @@ public class SettingsInAppController : MonoBehaviour
     public void showNoInternetBanner()
     {
         GameObject banner = Instantiate(_bannerPrefab, _parent.transform);
-        StartCoroutine(DestroyObject(banner));
+        Observable.Timer(TimeSpan.FromSeconds(_timeOfBanner)).Subscribe(x => DestroyObject(banner));
     }
     
-    IEnumerator DestroyObject(GameObject obj)
+    private void DestroyObject(GameObject obj)
     {
-        yield return new WaitForSeconds(_timeOfBanner);
         Destroy(obj);
     }
 

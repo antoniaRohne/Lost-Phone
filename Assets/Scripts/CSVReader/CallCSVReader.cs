@@ -1,27 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 public class CallCSVReader:ICSVReader<Call>
 {
-    private List<Call> _callList;
+    private readonly List<Call> _callList;
     
      public CallCSVReader()
      {
          _callList = new List<Call>();
-        TextAsset _calls = Resources.Load<TextAsset>("CSVFiles/Calls");
+        TextAsset calls = Resources.Load<TextAsset>("CSVFiles/Calls");
 		
-        string[] _callPersonList = _calls.text.Split(new char[] {'\n'});
+        string[] callPersonList = calls.text.Split(new char[] {'\n'});
 
-        for (var i = 0; i < _callPersonList.Length; i++)
+        for (var i = 0; i < callPersonList.Length; i++)
         {
             Call call = new Call();
-            string[] _call = _callPersonList[i].Split(new char[] {','});
-            call.Caller = _call[0];
-            call.CallTime =  _call[1];
-            call.AmountOfCalls = Convert.ToInt32(_call[2]);
-            Debug.Log(call);
+            string[] callInfo = callPersonList[i].Split(new char[] {','});
+            call.Caller = callInfo[0];
+            call.CallTime =  callInfo[1];
+            call.AmountOfCalls = Convert.ToInt32(callInfo[2]);
+            Debug.Log(callInfo);
             _callList.Add(call);
         }
      }

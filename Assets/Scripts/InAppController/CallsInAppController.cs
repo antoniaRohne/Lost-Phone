@@ -1,30 +1,27 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class CallsInAppController : MonoBehaviour
 {
 	private ICSVReader<Call> _csvReader;
-	[SerializeField] public GameObject _callPrefab;
+	[SerializeField] private CallView _callPrefab;
 	[SerializeField] private GameObject _parent;
+	
 	public void Start()
 	{
 		_csvReader = new CallCSVReader();
 		LoadContent();
 	}
 
-	public void LoadContent()
+	private void LoadContent()
 	{
 		var calls = _csvReader.GetList();
-		int x = 0;
 		foreach (Call call in calls)
 		{
-			GameObject callsGameObject = Instantiate(_callPrefab, _parent.transform);
-			var view = callsGameObject.GetComponent<CallView>();
-			view.Caller = call.Caller;
-			view.Time = call.CallTime;
-			view.Amount = call.AmountOfCalls;
+			CallView callsGameObject = Instantiate(_callPrefab, _parent.transform);
+			callsGameObject.Caller = call.Caller;
+			callsGameObject.Time = call.CallTime;
+			callsGameObject.Amount = call.AmountOfCalls;
 		}
 	}
 	

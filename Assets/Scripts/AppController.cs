@@ -49,18 +49,18 @@ public class AppController : MonoBehaviour {
 		//Load Sprites
 		foreach(var app in (AppEnum[]) Enum.GetValues(typeof(AppEnum)))
 		{
-			var g = Instantiate(_prefabListObject.List[0], _appsGrid.transform).GetComponent<AppView>(); //Zusammenfassen in View -> brauche ich ein getComponent
+			AppView g = Instantiate(_prefabListObject.AppPrefab, _appsGrid.transform).GetComponent<AppView>();
 			g.SetAppIcon(_importer.GetIcon(app));
 			g.SetApp(_importer.GetAppConfigs(app));  
 		}
 
 		//Events
-		var eventModel = new EventModel(Timer.Time.Value.AddMinutes(2), Timer, _prefabListObject.List[1], _importer.GetAppConfigs(AppEnum.Calendar));
+		new EventModel(Timer.Time.Value.AddMinutes(2), Timer, _prefabListObject.EventPrefab, _importer.GetAppConfigs(AppEnum.Calendar), _canvas);
 	}
 
-	public void LoadScene(AppConfigurations app)
+	public void LoadScene(IAppSceneLoading app, IAppLockingSystem lockingApp)
 	{
-		if(!_passwordController.CheckApp(app,_prefabListObject.GetList()[2], _canvas)){
+		if(!_passwordController.CheckApp(lockingApp,_prefabListObject.PasswordPanelPrefab, _canvas)){
 			var operation = SceneManager.LoadSceneAsync(app.Scene.name,LoadSceneMode.Additive);
 		
 			operation.completed += _=>

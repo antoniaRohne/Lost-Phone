@@ -1,12 +1,11 @@
 ﻿using System;
-using UniRx;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MemoInAppController: MonoBehaviour{
 
-	[SerializeField] private GameObject _memo;
+	[SerializeField] private Image _memo;
 	[SerializeField] private GameObject _parent;
 	[SerializeField] private Text _newMemoText;
 	
@@ -25,7 +24,7 @@ public class MemoInAppController: MonoBehaviour{
 		AppController.Instance.BackToMainMenu();
 	}
 
-	public void LoadContent()
+	private void LoadContent()
 	{
 		var memos = _csvReader.GetMemos();
 		foreach (string memo in memos)
@@ -36,14 +35,14 @@ public class MemoInAppController: MonoBehaviour{
 
 	private void CreateMemos(string text)
 	{
-		GameObject Memo = GameObject.Instantiate(_memo, _parent.transform); 
-		Memo.GetComponentInChildren<Text>().text = text;
+		Image memo = GameObject.Instantiate(_memo, _parent.transform); 
+		memo.GetComponentInChildren<Text>().text = text;				//GetComponentinChildren
 	}
 
 	public void CreateNewMemo()
 	{
-		GameObject Memo = GameObject.Instantiate(_memo, _parent.transform); 
-		Memo.GetComponentInChildren<Text>().text = _newMemoText.text;
+		Image memo = GameObject.Instantiate(_memo, _parent.transform); 
+		memo.GetComponentInChildren<Text>().text = _newMemoText.text;
 		_newMemoText.text = String.Empty;
 	}
 	

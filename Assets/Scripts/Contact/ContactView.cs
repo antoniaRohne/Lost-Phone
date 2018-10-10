@@ -9,7 +9,7 @@ public class ContactView : MonoBehaviour
 	[SerializeField]
 	private Text _surname;
 
-	public ContactModel _contact;
+	private ContactModel _contact;
 	
 	public ContactModel Contact
 	{
@@ -21,7 +21,7 @@ public class ContactView : MonoBehaviour
 	
 	public void OnClick()
 	{
-		GameObject.Find("InAppController").GetComponent<IInAppController>().ButtonOnClick(_contact);
+		GameObject.Find("InAppController").GetComponent<ContactController>().ButtonOnClick(_contact);
 
 	}
 	

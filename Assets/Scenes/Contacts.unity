@@ -202,10 +202,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b75772949cc0a246907dff6d685760e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _contact: {fileID: 1959349428876736, guid: febfc51e37e263a4da004bdb7aee2d1b, type: 2}
+  _contact: {fileID: 114020386971514366, guid: febfc51e37e263a4da004bdb7aee2d1b, type: 2}
   _parent: {fileID: 746793621}
-  _infoPanel: {fileID: 1829688164384656, guid: 4379a65917cc1024b9d4d3442afba7ad, type: 2}
-  _info: {fileID: 0}
+  _infoPanel: {fileID: 114497309696955552, guid: 4379a65917cc1024b9d4d3442afba7ad,
+    type: 2}
 --- !u!4 &406266973
 Transform:
   m_ObjectHideFlags: 0
@@ -429,7 +429,7 @@ Prefab:
     - target: {fileID: 224585779223588772, guid: 7eb4131e040865945b500a593d9511c3,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -0.00001526475
       objectReference: {fileID: 0}
     - target: {fileID: 114698544190379708, guid: 7eb4131e040865945b500a593d9511c3,
         type: 2}

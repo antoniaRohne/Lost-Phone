@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ImageImporter: ICSVReader<Sprite>
 {
-    private Sprite[] _images;
+    private readonly Sprite[] _images;
     
     public ImageImporter()
     {

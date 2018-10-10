@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 222184517639385066}
   - component: {fileID: 114246013522457616}
   - component: {fileID: 114398213123008184}
+  - component: {fileID: 114494979701869536}
   m_Layer: 5
   m_Name: UnlockPanel
   m_TagString: Untagged
@@ -233,7 +234,6 @@ MonoBehaviour:
   _inputtext: {fileID: 114675556474623292}
   _indicator: {fileID: 114444502964102500}
   _unlockStateImage: {fileID: 114989257085311808}
-  passwordPanelPrefab: {fileID: 1148940633682000}
   _unlockStateSprite: {fileID: 21300000, guid: 7b7b34ac073474b02b8969c15d49d01d, type: 3}
 --- !u!114 &114444502964102500
 MonoBehaviour:
@@ -262,6 +262,17 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114494979701869536
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1148940633682000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb219b23cdf4b314f94a27bca3cc8012, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114504786776454486
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class ContactController :  MonoBehaviour, IInAppController
@@ -8,10 +6,9 @@ public class ContactController :  MonoBehaviour, IInAppController
 
 	private ContactCSVReader _csvReader;
 
-	[SerializeField] private GameObject _contact;
+	[SerializeField] private ContactView _contact;
 	[SerializeField] private GameObject _parent;
-	[SerializeField] private GameObject _infoPanel;
-	[SerializeField] private GameObject _info;
+	[SerializeField] private ContactPanelView _infoPanel;
 	
 	public void Start()
 	{
@@ -29,23 +26,20 @@ public class ContactController :  MonoBehaviour, IInAppController
 	public void LoadContent()
 	{
 		var contacts = _csvReader.GetModelList();
-		int x = 0;
 		foreach (ContactModel contact in contacts)
 		{
-			GameObject contactGameObject = Instantiate(_contact, _parent.transform);
-			var view = contactGameObject.GetComponent<ContactView>();
-			view.Contact = contact;
+			ContactView contactGameObject = Instantiate(_contact, _parent.transform);
+			contactGameObject.Contact = contact;
 		}
 	}
 
 	public void ButtonOnClick(ContactModel contact)
 	{
-		GameObject infoPanel = Instantiate(_infoPanel, GameObject.Find("Canvas").transform);
-		ContactPanelView view = infoPanel.GetComponent<ContactPanelView>();
-		view.Surname = contact.Surname;
-		view.Name = contact.Name;
-		view.Age = contact.Age;
-		view.EMail = contact.EMail;
-		view.Sex = contact.Sex;
+		ContactPanelView infoPanel = Instantiate(_infoPanel, _parent.transform);
+		infoPanel.Surname = contact.Surname;
+		infoPanel.Name = contact.Name;
+		infoPanel.Age = contact.Age;
+		infoPanel.EMail = contact.EMail;
+		infoPanel.Sex = contact.Sex;
 	}
 }

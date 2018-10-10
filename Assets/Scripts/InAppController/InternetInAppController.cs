@@ -1,22 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using App;
-using UniRx;
+﻿using App;
 using UnityEngine;
-using UnityEngine.Experimental.UIElements.StyleEnums;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class InternetInAppController : MonoBehaviour
 {
 
 
-    [SerializeField] private AppConfigurations settings;
-    
-    public void Start()
-    {
-        //Load Data
-    }
+    [SerializeField] private AppConfigurations _settings;
 
     public void Exit()
     {
@@ -27,7 +17,7 @@ public class InternetInAppController : MonoBehaviour
     public void GoToSettings()
     {
         SceneManager.UnloadSceneAsync(this.gameObject.scene);
-        AppController.Instance.LoadScene(settings);
+        AppController.Instance.LoadScene(_settings, _settings);
     }
 
 }

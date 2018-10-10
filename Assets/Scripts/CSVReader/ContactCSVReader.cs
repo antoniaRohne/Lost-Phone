@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class ContactCSVReader
 {	
-	private List<ContactModel> _contactList = new List<ContactModel>();
+	private readonly List<ContactModel> _contactList = new List<ContactModel>();
 
 	public ContactCSVReader()
 	{

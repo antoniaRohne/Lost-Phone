@@ -8,16 +8,15 @@ public class PasswordPanelView : MonoBehaviour
     [SerializeField] private Text _inputtext;
     [SerializeField] private Image _indicator;
     [SerializeField] private Image _unlockStateImage;
-    [SerializeField] private GameObject passwordPanelPrefab;
     [SerializeField] private Sprite _unlockStateSprite;
 
-    private GameObject lockingPanel;
+    private GameObject _lockingPanel;
     
-    public IReadOnlyReactiveProperty<string> password { get; set; }
+    public IReadOnlyReactiveProperty<string> Password { get; set; }
 
     public void CreatePasswordPanel(IAppLockingSystem app)
     {
-        password = _inputtext.ObserveEveryValueChanged(text => text.text).ToReactiveProperty();	
+        Password = _inputtext.ObserveEveryValueChanged(text => text.text).ToReactiveProperty();	
     }
 
     public void Unlock()
@@ -28,6 +27,6 @@ public class PasswordPanelView : MonoBehaviour
 
     public void Destroy()
     {
-        Destroy(lockingPanel);
+        Destroy(this.gameObject);
     }
 }

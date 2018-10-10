@@ -11,10 +11,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 569ea7a560dc1544bbbbbb101a9005a4, type: 3}
   m_Name: PrefabList
   m_EditorClassIdentifier: 
-  List:
-  - {fileID: 1201570493872674, guid: 75a2a63085854c64c9bc0b10c8c0a073, type: 2}
-  - {fileID: 1559819046625940, guid: ed2c4245565691246a9fc697691fc09c, type: 2}
-  - {fileID: 1148940633682000, guid: 489132dd1e5c9f9438ea40b3eaf8c851, type: 2}
-  appPrefab: {fileID: 0}
-  eventPrefab: {fileID: 0}
-  passwordPanelPrefab: {fileID: 0}
+  appPrefab: {fileID: 114118746740457614, guid: 75a2a63085854c64c9bc0b10c8c0a073,
+    type: 2}
+  eventPrefab: {fileID: 114827447273148364, guid: ed2c4245565691246a9fc697691fc09c,
+    type: 2}
+  passwordPanelPrefab: {fileID: 114398213123008184, guid: 489132dd1e5c9f9438ea40b3eaf8c851,
+    type: 2}

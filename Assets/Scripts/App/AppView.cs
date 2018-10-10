@@ -17,6 +17,6 @@ public class AppView :MonoBehaviour{
     }
 
     public void GetLoaded(){
-        AppController.Instance.LoadScene(_app);
+        AppController.Instance.LoadScene(_app, _app);
     }
 }

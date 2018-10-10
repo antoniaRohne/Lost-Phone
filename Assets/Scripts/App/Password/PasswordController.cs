@@ -1,18 +1,15 @@
 ﻿
-using System.Collections;
-using System.Runtime.Remoting.Messaging;
-using System.Text;
+using System;
 using App;
 using UniRx;
-using UniRx.Triggers;
-using UnityEditor;
 using UnityEngine;
-using UnityEngine.UI;
+using Object = UnityEngine.Object;
 
 public class PasswordController
 {
-	private PasswordPanelView view;
-	public bool CheckApp(IAppLockingSystem app, GameObject prefab, GameObject parent)
+	private PasswordPanelView _lockingPanel;
+	
+	public bool CheckApp(IAppLockingSystem app, PasswordPanelView prefab, GameObject parent)
 	{
 		if (app.LockingState)
 		{
@@ -23,28 +20,24 @@ public class PasswordController
 		
 	}
 
-	private void StartUnlockingProcess(IAppLockingSystem app, GameObject prefab, GameObject parent)
+	private void StartUnlockingProcess(IAppLockingSystem app, PasswordPanelView prefab, GameObject parent)
 	{
-		var lockingPanel = GameObject.Instantiate(prefab, parent.transform); 
-		view = lockingPanel.GetComponent<PasswordPanelView>();
-		view.CreatePasswordPanel(app);
-		//view.password.Where(x => x.Equals(app.Password)).Subscribe(x => UnlockSuccessfully()).AddTo(this);
-		view.password.Where(x => x.Equals(app.Password)).Subscribe(x => UnlockSuccessfully(app));
+		_lockingPanel = Object.Instantiate(prefab, parent.transform); 
+		_lockingPanel.CreatePasswordPanel(app);
+		_lockingPanel.Password.Where(x => x.Equals(app.Password)).Subscribe(x => UnlockSuccessfully(app)).AddTo(_lockingPanel);
 	}
 
 	private void UnlockSuccessfully(IAppLockingSystem app)
 	{
 		Debug.Log("unlocked");
 		app.LockingState = false;
-		view.Unlock();
-		MainThreadDispatcher.StartCoroutine(LoadNewScene(app));
-		
+		_lockingPanel.Unlock();
+		Observable.Timer(TimeSpan.FromSeconds(3)).Subscribe(x => LoadNewScene(app));
 	}
 
-	IEnumerator LoadNewScene(IAppLockingSystem app)
+	private void LoadNewScene(IAppLockingSystem app)
 	{
-		yield return new WaitForSeconds(3);
-		view.Destroy();
+		_lockingPanel.Destroy();
 		AppController.Instance.LoadScene(app.Name);
 	}
 }

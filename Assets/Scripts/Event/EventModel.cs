@@ -7,31 +7,31 @@ using Object = UnityEngine.Object;
 public class EventModel
 {
     private ReactiveProperty<DateTime> StartTime  { get; set; }
-    private readonly GameObject _pushnote; //Pushnotification object -> unten kein get component 
-    private AppConfigurations _app;
+    private readonly PushNotificationConfig _pushnote;
+    private readonly AppConfigurations _app;
 
-    public EventModel(DateTime eventTime, TimerModel timerModel, GameObject pushnote, AppConfigurations app)
+    public EventModel(DateTime eventTime, TimerModel timerModel, PushNotificationConfig pushnote, AppConfigurations app, GameObject parent)
     {
         StartTime = new ReactiveProperty<DateTime>(eventTime);
         _pushnote = pushnote;
         _app = app;
-        SubscribeToTimer(timerModel);
+        SubscribeToTimer(timerModel, parent);
     } 
 
-    private void SubscribeToTimer(TimerModel timerModel)
+    private void SubscribeToTimer(TimerModel timerModel, GameObject parent)
     {
         //Where, Combine latest, Take (automatisch disposed)
-        timerModel.Time.Where(x => x==StartTime.Value).Take(1).Subscribe(_ => StartEvent());
+        timerModel.Time.Where(x => x==StartTime.Value).Take(1).Subscribe(_ => StartEvent(parent));
         
     }
 
-    private void StartEvent()
+    private void StartEvent(GameObject parent)
     {
         //Debug.Log("An event triggered.");
-        var pushnote =  Object.Instantiate(_pushnote, GameObject.Find("Canvas").transform); // static bzw. durchgeben
-        pushnote.GetComponent<PushNotificationConfig>().Icon = _app.Icon;
-        pushnote.GetComponent<PushNotificationConfig>().Title = _app.Name.ToString();
-        pushnote.GetComponent<PushNotificationConfig>().Content = _app.PushNoteContent;
+        PushNotificationConfig pushnote =  Object.Instantiate(_pushnote, parent.transform);
+        pushnote.Icon = _app.Icon;
+        pushnote.Title = _app.Name.ToString();
+        pushnote.Content = _app.PushNoteContent;
         Object.Destroy(pushnote, pushnote.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length);  //Zeitpunkt destroy in Pushnotificationconfig
     }
 }
