@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 569ea7a560dc1544bbbbbb101a9005a4, type: 3}
+  m_Name: PrefabList
+  m_EditorClassIdentifier: 
+  AppPrefab: {fileID: 114118746740457614, guid: 75a2a63085854c64c9bc0b10c8c0a073,
+    type: 2}
+  EventPrefab: {fileID: 114827447273148364, guid: ed2c4245565691246a9fc697691fc09c,
+    type: 2}
+  PasswordPanelPrefab: {fileID: 114398213123008184, guid: 489132dd1e5c9f9438ea40b3eaf8c851,
+    type: 2}
