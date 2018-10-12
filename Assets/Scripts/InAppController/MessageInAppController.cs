@@ -9,7 +9,7 @@ public class MessageInAppController : MonoBehaviour,IInAppController
 	[SerializeField] private GameObject _contactParent;
 	[SerializeField] private GameObject _messagePanelParent;
 	[SerializeField] private GameObject _messagePanel;
-	[SerializeField] private GameObject _message;
+	[SerializeField] private MessageView _message;
 	
 	private void Start()
 	{
@@ -37,13 +37,20 @@ public class MessageInAppController : MonoBehaviour,IInAppController
 
 	public void ButtonOnClick(ContactModel c)
 	{
-		GameObject panel = Instantiate(_messagePanel, _messagePanelParent.transform);
+		Instantiate(_messagePanel, _messagePanelParent.transform);
+		
 		for(var i = 0; i<c.Messages.Length;i++){
-			Instantiate(_message, panel.transform);
-			string message = c.Messages[c.Messages.Length-1-i];
+			
+			MessageView messageView = Instantiate(_message, GameObject.Find("MessageContent").transform); //GameObjectFind
+			
+			string message = c.Messages[i];
 			string[] messageIndicator = message.Split(new char[] {'_'});
 			
-			_message.GetComponentInChildren<TextMeshProUGUI>().text = messageIndicator[1];
+			messageView.MessageText.text= messageIndicator[1];
+			if (messageIndicator[0] == "O")
+			{
+				messageView.setAlignmentToRight();
+			}
 		}
 	}
 }

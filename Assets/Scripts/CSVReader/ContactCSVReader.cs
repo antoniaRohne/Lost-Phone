@@ -13,8 +13,6 @@ public class ContactCSVReader
 		TextAsset contacts = Resources.Load<TextAsset>("CSVFiles/Contacts");
 		
 		string[] contactList = contacts.text.Split(new char[] {'\n'});
-
-		//google c# utility csvreader -> in eine klasse ?
 		
 		for (var i = 0; i < contactList.Length-1; i++)
 		{
@@ -49,10 +47,8 @@ public class ContactCSVReader
 	{
 		foreach (KeyValuePair<string, string[]> message in messages)
 		{
-			Debug.Log("Message Key:"  + message.Key);
 			ContactModel contact = FindContact(message.Key);
 			contact.Messages = message.Value.Skip(1).ToArray();
-			Debug.Log(contact.Messages);
 		}
 	}
 	
@@ -60,8 +56,6 @@ public class ContactCSVReader
 	{
 		foreach (ContactModel contact in _contactList)
 		{
-			Debug.Log(contact.Id);
-			Debug.Log(id);
 			if (contact.Id.Equals(id))
 			{
 				return contact;

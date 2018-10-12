@@ -396,7 +396,7 @@ MonoBehaviour:
   _messagePanelParent: {fileID: 696300717}
   _messagePanel: {fileID: 1095057168112512, guid: af3c5d43c603c15489045c3d03e9fe4b,
     type: 2}
-  _message: {fileID: 1527029947148452, guid: 7afefe072cf06834fba26920ce2b6db2, type: 2}
+  _message: {fileID: 114102778169270922, guid: 7afefe072cf06834fba26920ce2b6db2, type: 2}
 --- !u!4 &287147843
 Transform:
   m_ObjectHideFlags: 0

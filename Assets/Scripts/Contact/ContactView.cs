@@ -21,7 +21,7 @@ public class ContactView : MonoBehaviour
 	
 	public void OnClick()
 	{
-		GameObject.Find("InAppController").GetComponent<ContactController>().ButtonOnClick(_contact);
+		GameObject.Find("InAppController").GetComponent<IInAppController>().ButtonOnClick(_contact);
 
 	}
 	

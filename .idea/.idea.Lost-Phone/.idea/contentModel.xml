@@ -423,7 +423,6 @@
             </e>
           </e>
         </e>
-        <e p="PrefabList.cs" t="Include" />
         <e p="Scripts" t="Include">
           <e p="App" t="Include">
             <e p="AppConfigurations.cs" t="Include" />
@@ -444,6 +443,7 @@
             <e p="ContactModel.cs" t="Include" />
             <e p="ContactPanelView.cs" t="Include" />
             <e p="ContactView.cs" t="Include" />
+            <e p="MessageView.cs" t="Include" />
           </e>
           <e p="CSVReader" t="Include">
             <e p="CallCSVReader.cs" t="Include" />
@@ -469,6 +469,7 @@
             <e p="MessageInAppController.cs" t="Include" />
             <e p="SettingsInAppController.cs" t="Include" />
           </e>
+          <e p="PrefabList.cs" t="Include" />
           <e p="Timer" t="Include">
             <e p="TimerModel.cs" t="Include" />
             <e p="TimerView.cs" t="Include" />
