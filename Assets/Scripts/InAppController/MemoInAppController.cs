@@ -1,4 +1,5 @@
 ﻿using System;
+using CSVReader;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -26,7 +27,7 @@ public class MemoInAppController: MonoBehaviour{
 
 	private void LoadContent()
 	{
-		var memos = _csvReader.GetMemos();
+		var memos = _csvReader.GetList();
 		foreach (string memo in memos)
 		{
 			CreateMemos(memo);

@@ -1,9 +1,10 @@
-﻿using UnityEngine;
+﻿using CSVReader;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class CallsInAppController : MonoBehaviour
 {
-	private ICSVReader<Call> _csvReader;
+	private CallCSVReader _csvReader;
 	[SerializeField] private CallView _callPrefab;
 	[SerializeField] private GameObject _parent;
 	

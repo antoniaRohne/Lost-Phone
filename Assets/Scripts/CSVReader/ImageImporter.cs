@@ -1,18 +1,19 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class ImageImporter: ICSVReader<Sprite>
+namespace CSVReader
 {
-    private readonly Sprite[] _images;
+    public class ImageImporter: CSVReader<Sprite>
+    {
     
-    public ImageImporter()
-    {
-       _images = Resources.LoadAll<Sprite>("GalleryImages");
-    }
+        public ImageImporter():base(){}
 
-    public List<Sprite> GetList()
-    {
-        return _images.ToList();
+        protected override void GetContent()
+        {
+            Sprite[] _images = Resources.LoadAll<Sprite>("GalleryImages");
+            foreach (Sprite s in _images)
+            {
+                Data.Add(s);
+            }
+        }
     }
 }

@@ -110,9 +110,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76affd4e68f94ad45b007acae80d15a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  caller: {fileID: 114503817809697340}
-  time: {fileID: 114342699685834610}
-  amount: {fileID: 114270196403938560}
+  _caller: {fileID: 114503817809697340}
+  _time: {fileID: 114342699685834610}
+  _amount: {fileID: 114270196403938560}
 --- !u!114 &114270196403938560
 MonoBehaviour:
   m_ObjectHideFlags: 1

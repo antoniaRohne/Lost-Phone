@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using CSVReader;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -27,7 +28,7 @@ public class MessageInAppController : MonoBehaviour,IInAppController
 
 	public void LoadContent()
 	{
-		var contacts = _csvContactReader.GetModelList();
+		var contacts = _csvContactReader.GetList();
 		foreach (ContactModel contact in contacts)
 		{
 			ContactView contactGameObject = Instantiate(_contact, _contactParent.transform);

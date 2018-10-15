@@ -435,6 +435,10 @@
             </e>
           </e>
           <e p="AppController.cs" t="Include" />
+          <e p="Calendar" t="Include">
+            <e p="CalendarEntry.cs" t="Include" />
+            <e p="CalendarView.cs" t="Include" />
+          </e>
           <e p="Calls" t="Include">
             <e p="Call.cs" t="Include" />
             <e p="CallView.cs" t="Include" />
@@ -446,9 +450,10 @@
             <e p="MessageView.cs" t="Include" />
           </e>
           <e p="CSVReader" t="Include">
+            <e p="CalendarCSVReader.cs" t="Include" />
             <e p="CallCSVReader.cs" t="Include" />
             <e p="ContactCSVReader.cs" t="Include" />
-            <e p="ICSVReader.cs" t="Include" />
+            <e p="CSVReader.cs" t="Include" />
             <e p="ImageImporter.cs" t="Include" />
             <e p="MemoCSVReader.cs" t="Include" />
             <e p="MessageCSVReader.cs" t="Include" />
@@ -459,6 +464,7 @@
           </e>
           <e p="Importer.cs" t="Include" />
           <e p="InAppController" t="Include">
+            <e p="CalendarInAppController.cs" t="Include" />
             <e p="CallsInAppController.cs" t="Include" />
             <e p="ClockInAppController.cs" t="Include" />
             <e p="ContactController.cs" t="Include" />

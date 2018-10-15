@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using CSVReader;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class ContactController :  MonoBehaviour, IInAppController
@@ -25,7 +26,7 @@ public class ContactController :  MonoBehaviour, IInAppController
 
 	public void LoadContent()
 	{
-		var contacts = _csvReader.GetModelList();
+		var contacts = _csvReader.GetList();
 		foreach (ContactModel contact in contacts)
 		{
 			ContactView contactGameObject = Instantiate(_contact, _parent.transform);

@@ -1,7 +1,4 @@
-﻿
-using System;
-
-public interface IInAppController
+﻿public interface IInAppController
 {
     void Exit();
     void LoadContent();

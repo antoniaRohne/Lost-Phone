@@ -1,27 +1,22 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class MessageCSVReader
+namespace CSVReader
 {
-    private readonly Dictionary<string, string[]> _messagesDictionary;
-    
-     public MessageCSVReader()
-     {
-        _messagesDictionary = new Dictionary<string, string[]>();
-        TextAsset messages = Resources.Load<TextAsset>("CSVFiles/Messages");
-		
-        string[] messagePersonList = messages.text.Split(new char[] {'\n'});
+    public class MessageCSVReader: CSVReader<string[]>
+    {    
+        public MessageCSVReader(): base(){}
 
-        for (var i = 0; i < messagePersonList.Length-1; i++)
+        protected override void GetContent()
         {
-            string[] messagesInfo = messagePersonList[i].Split(new char[] {','});
-            _messagesDictionary.Add(messagesInfo[0], messagesInfo);
+            TextAsset messages = Resources.Load<TextAsset>("CSVFiles/Messages");
+		
+            string[] messagePersonList = messages.text.Split(new char[] {'\n'});
+
+            for (var i = 0; i < messagePersonList.Length-1; i++)
+            {
+                string[] messagesInfo = messagePersonList[i].Split(new char[] {','});
+                Data.Add(messagesInfo);
+            }
         }
-     }
-
-    public Dictionary<string,string[]> GetUpdatedContacts()
-    {
-        return _messagesDictionary;
     }
-
 }

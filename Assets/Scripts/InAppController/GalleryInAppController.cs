@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using CSVReader;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -15,7 +16,7 @@ public class GalleryInAppController : MonoBehaviour {
     {
         //Load Contact Data
         _imageImporter = new ImageImporter();
-        _images = new List<Sprite>();
+        _images = _imageImporter.GetList();
         _currentIndex = 0;
         LoadContent();
     }
@@ -28,11 +29,6 @@ public class GalleryInAppController : MonoBehaviour {
 
     private void LoadContent()
     {
-        var pics = _imageImporter.GetList();
-        foreach (Sprite pic in pics)
-        {
-            _images.Add(pic);
-        }
         _currentImage.sprite = _images[_currentIndex];
     }
 
